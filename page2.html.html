@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>amendes.gouv.fr</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f0f7;
+            padding: 20px;
+            text-align: center;
+        }
+        .confirmation-container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2e7d32;
+        }
+        p {
+            font-size: 16px;
+            margin: 15px 0;
+        }
+        .details {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1>Paiement effectué avec succès</h1>
+        <p>Merci pour votre règlement. Votre amende a bien été prise en compte.</p>
+        <div class="details" id="details">
+            <!-- Détails insérés par JavaScript -->
+        </div>
+        <div class="footer">
+            &copy; 2025 Service Public - Paiement en ligne sécurisé (simulation)
+        </div>
+    </div>
+
+    <script>
+        // Récupérer les paramètres dans l'URL
+        const params = new URLSearchParams(window.location.search);
+        const amende = params.get('amende') || 'N/A';
+        const montant = params.get('montant') || 'N/A';
+
+        // Afficher les détails
+        const detailsDiv = document.getElementById('details');
+        const datePaiement = new Date().toLocaleString('fr-FR', { dateStyle: 'full', timeStyle: 'short' });
+
+        detailsDiv.innerHTML = `
+            <strong>Détails du paiement :</strong><br/>
+            Numéro d'amende : ${amende}<br/>
+            Montant payé : ${montant} €<br/>
+            Date et heure : ${datePaiement}<br/>
+            Référence de transaction : ${Math.floor(Math.random() * 9000000000) + 1000000000}
+        `;
+    </script>
+</body>
+</html>

